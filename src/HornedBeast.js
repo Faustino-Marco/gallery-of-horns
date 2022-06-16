@@ -1,7 +1,19 @@
 import React from 'react';
-// import Button from 'react-bootstrap/Button';
+// import Card from 'react-bootstrap/Card';
 
 class HornedBeast extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      likes: 0,
+    }
+  }
+
+  likeCard = () => {
+    this.setState({
+      likes: this.state.likes + 1,
+    })
+  }
   render() {
     return (
     <article>
