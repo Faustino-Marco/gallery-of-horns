@@ -2,6 +2,7 @@ import React from 'react';
 import './HornedBeast.css';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import Col from 'react-bootstrap/Card';
 
 class HornedBeast extends React.Component {
   constructor(props) {
@@ -9,19 +10,24 @@ class HornedBeast extends React.Component {
     this.state = {
       likes: 0,
     }
-  }
+  };
 
   likeCard = () => {
     this.setState({
       likes: this.state.likes + 1,
     })
-  }
+  };
+
+  handleTitleClick = () => {
+    this.props.handleOnShowModal(this.props.title);
+  };
 
   render() {
     return (
-      <Card style={{ width: '18rem' }} onClick={this.likeCard}>
+      <Col className="">
+      <Card style={{ width: '18rem' }}>
         <Card.Body>
-          <Card.Title>{this.props.title}</Card.Title>
+          <Card.Title onClick={this.handleTitleClick}>{this.props.title}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted" onClick={this.likeCard}>{this.state.likes} ❤️ Favorites</Card.Subtitle>
           <Card.Img variant="top" src={this.props.imageUrl} />
 
@@ -31,6 +37,7 @@ class HornedBeast extends React.Component {
           <Button variant="success">Bootstrap button</Button>
         </Card.Body>
       </Card>
+      </Col>
 
 
 
