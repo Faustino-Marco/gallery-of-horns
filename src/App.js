@@ -3,6 +3,7 @@ import Header from './Header';
 import Footer from './Footer';
 import Main from './Main';
 import Modal from 'react-bootstrap/Modal';
+import Form from './Form';
 import './App.css';
 import data from './data.json';
 
@@ -12,6 +13,8 @@ class App extends React.Component {
     this.state = {
       heart: 'test',
       showModal: false,
+      selectedBeast: '',
+      allBeasts: data,
     }
   }
 
@@ -20,6 +23,10 @@ class App extends React.Component {
   //     heart: this.state.heart + 'heart emoji'
   //   })
   // }
+
+  resultBeasts = (newBeasts) => {
+    this.setState({allBeasts: newBeasts});
+  }
 
   handleOnHide = () => {
     this.setState({
