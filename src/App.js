@@ -2,16 +2,18 @@ import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import Main from './Main';
+import Modal from 'react-bootstrap/Modal';
 import './App.css';
 import data from './data.json';
 
 class App extends React.Component {
-  // constructor (props) {
-  //   super(props);
-  //   this.state = {
-  //     heart: 'test'
-  //   }
-  // }
+  constructor(props) {
+    super(props);
+    this.state = {
+      heart: 'test',
+      showModal: false,
+    }
+  }
 
   // addHearts = () => {
   //   this.setState({
@@ -19,14 +21,34 @@ class App extends React.Component {
   //   })
   // }
 
+  handleOnHide = () => {
+    this.setState({
+      showModal: false,
+    });
+  };
+
+  handleOnShowModal = (name) => {
+    this.setState({
+      showModal: true,
+      selectedBeast: name,
+    });
+  };
+
   render() {
-    return(
+    return (
       <>
-      <Header 
-        // hearts={this.state.heart}
-        />
-      <Main data={data}/>
-      <Footer />
+        <Header />
+        <Main
+          data={data}
+          handleOnShowModal={this.handleOnShowModal} />
+        <Footer />
+        <Modal
+          show={this.state.showModal}
+          onHide={this.handleOnHide}>
+          <Modal.Header closeButton>
+            <Modal.Title>{this.title}</Modal.Title>
+          </Modal.Header>
+        </Modal>
       </>
     );
   }
