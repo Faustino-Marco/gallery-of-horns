@@ -5,11 +5,10 @@ import './Main.css';
 class Main extends React.Component {
   constructor(props) {
     super(props);
-  }
+  };
+
   render() {
-    let beasts =[];
-    this.props.data.forEach((beast, idx) => {
-      beasts.push(
+    let beasts = this.props.data.map((beast, idx) => (
         <HornedBeast
         title={beast.title}
         description={beast.description}
@@ -17,12 +16,13 @@ class Main extends React.Component {
         key={idx}
         // addHearts={this.props.addHearts}
       />)
-    });
+    );
+
     return (
       <main>
         {beasts}
       </main>
-    )
+    );
   }
 }
 

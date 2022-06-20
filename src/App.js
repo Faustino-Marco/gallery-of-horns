@@ -22,9 +22,7 @@ class App extends React.Component {
   render() {
     return(
       <>
-      <Header 
-        // hearts={this.state.heart}
-        />
+      <Header />
       <Main data={data}/>
       <Footer />
       </>
