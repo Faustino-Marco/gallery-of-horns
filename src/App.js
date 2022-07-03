@@ -51,7 +51,7 @@ class App extends React.Component {
   handleHorn = (numHorns) => {
     console.log(numHorns);
     if (numHorns == "All") {
-      this.props.searchedHorn(data);
+      this.resultBeasts(data);
     } else if (numHorns === "1") {
       console.log(data.filter(beast => beast.horns == 1));
       let hornCriteria = data.filter(beast =>
