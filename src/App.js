@@ -3,9 +3,10 @@ import Header from './Header';
 import Footer from './Footer';
 import Main from './Main';
 import Modal from 'react-bootstrap/Modal';
-import Form from './Form';
+// import Form from './Form';
 import './App.css';
 import data from './data.json';
+import { ModalBody, ModalFooter } from 'react-bootstrap';
 
 class App extends React.Component {
   constructor(props) {
@@ -34,10 +35,13 @@ class App extends React.Component {
     });
   };
 
-  handleOnShowModal = (name) => {
+  handleOnShowModal = (name, description, img, likes) => {
     this.setState({
       showModal: true,
       selectedBeast: name,
+      selectedDescription: description,
+      selectedImg: img,
+      selectedLikes: likes
     });
   };
 
@@ -53,8 +57,20 @@ class App extends React.Component {
           show={this.state.showModal}
           onHide={this.handleOnHide}>
           <Modal.Header closeButton>
-            <Modal.Title>{this.title}</Modal.Title>
+            <Modal.Title>
+              {this.state.selectedBeast}
+            </Modal.Title>
           </Modal.Header>
+          <ModalBody>
+            {this.state.selectedLikes} ❤️ Likes
+            <hr></hr>
+            {this.state.selectedDescription}
+            <hr></hr>
+            <img src={this.state.selectedImg} alt="" width="100%"/>
+          </ModalBody>
+          <ModalFooter>
+
+          </ModalFooter>
         </Modal>
       </>
     );
