@@ -1,5 +1,6 @@
 import React from 'react';
 import HornedBeast from './HornedBeast';
+import BeastForm from './BeastForm';
 import './Main.css';
 import { Container, Row } from 'react-bootstrap';
 
@@ -22,6 +23,11 @@ class Main extends React.Component {
 
     return (
       <main>
+        <BeastForm 
+        handleSubmit={this.props.handleSubmit}
+        handleChange={this.props.handleChange}
+        // handleHorn={this.props.handleHorn}
+        />
         <Container>
           <Row lg={4}>
           {beasts}

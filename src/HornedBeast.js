@@ -49,8 +49,8 @@ class HornedBeast extends React.Component {
       //   <Button variant="success">Bootstrap button</Button>
       //   <button>html button</button>
       // </article>
-    )
-  }
-}
+    );
+  };
+};
 
 export default HornedBeast;
