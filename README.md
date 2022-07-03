@@ -4,15 +4,28 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Time Estimates
 
-### Number and name of feature: Feature #1: Display a Modal
+### Number and name of feature: 
 
-Estimate of time needed to complete: 30 minutes
+#### Feature #1: Display a Modal
 
-Start time: 8:30pm
+- Estimate of time needed to complete: 30 minutes
 
-Finish time: 10:00pm
+- Start time: 8:30pm
 
-Actual time needed to complete: 1.5 hrs
+- Finish time: 10:00pm
+
+- Actual time needed to complete: 1.5 hrs
+
+#### Feature #2: Filter by Number of Horns
+
+- Estimate of time needed to complete: 1hr minutes
+
+- Start time: 8:30am
+
+- Finish time: 11:00am
+
+- Actual time needed to complete: 2.5 hrs
+  - (took lots of time to re-watch lecture and rework my code...actual time coding was more like 45mins-1hr after grasping the concept)
 
 ## Available Scripts
 
