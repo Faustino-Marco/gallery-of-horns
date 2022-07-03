@@ -1,12 +1,12 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import data from './data.json';
-import HornedBeast from './HornedBeast';
+// import HornedBeast from './HornedBeast';
 
 let searchArr = [1, 2, 3, 100];
 
-class Form extends React.Component {
+class beastForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
