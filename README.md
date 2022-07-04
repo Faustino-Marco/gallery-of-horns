@@ -6,7 +6,17 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### Number and name of feature: 
 
-#### Feature #1: Display a Modal
+#### Feature #1: Display Title, Image, and Description of each Beast
+
+- Estimate of time needed to complete: 30 minutes
+
+- Start time: 8:30pm
+
+- Finish time: 09:14pm
+
+- Actual time needed to complete: 45 mins
+
+#### Feature #2: Display a Modal
 
 - Estimate of time needed to complete: 30 minutes
 
@@ -16,7 +26,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 - Actual time needed to complete: 1.5 hrs
 
-#### Feature #2: Filter by Number of Horns
+#### Feature #3: Filter by Number of Horns
 
 - Estimate of time needed to complete: 1hr minutes
 
