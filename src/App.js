@@ -2,11 +2,10 @@ import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import Main from './Main';
-import Modal from 'react-bootstrap/Modal';
 // import Form from './Form';
 import './App.css';
 import data from './data.json';
-import { ModalBody, ModalFooter } from 'react-bootstrap';
+import SelectedBeast from './SelectedBeast';
 
 class App extends React.Component {
   constructor(props) {
@@ -14,8 +13,9 @@ class App extends React.Component {
     this.state = {
       heart: 'test',
       showModal: false,
-      selectedBeast: '',
+      selectedBeast: {},
       allBeasts: data,
+      selectedLikes: 0,
     }
   }
 
@@ -25,14 +25,15 @@ class App extends React.Component {
     });
   };
 
-  handleOnShowModal = (name, description, img, likes) => {
+  handleOnShowModal = (beast, likes) => {
     this.setState({
       showModal: true,
-      selectedBeast: name,
-      selectedDescription: description,
-      selectedImg: img,
+      selectedBeast: beast,
       selectedLikes: likes
     });
+    console.log('i fired');
+    console.log(this.state.showModal)
+    console.log(this.state.selectedBeast);
   };
 
   handleSubmit = (event) => {
@@ -53,7 +54,6 @@ class App extends React.Component {
     if (numHorns == "All") {
       this.resultBeasts(data);
     } else if (numHorns === "1") {
-      console.log(data.filter(beast => beast.horns == 1));
       let hornCriteria = data.filter(beast =>
         beast.horns == 1);
       this.resultBeasts(hornCriteria);
@@ -98,25 +98,12 @@ class App extends React.Component {
           // handleHorn={this.handleHorn} 
           />
         <Footer />
-        <Modal
-          show={this.state.showModal}
-          onHide={this.handleOnHide}>
-          <Modal.Header closeButton>
-            <Modal.Title>
-              {this.state.selectedBeast}
-            </Modal.Title>
-          </Modal.Header>
-          <ModalBody>
-            {this.state.selectedLikes} ❤️ Likes
-            <hr></hr>
-            {this.state.selectedDescription}
-            <hr></hr>
-            <img src={this.state.selectedImg} alt="" width="100%"/>
-          </ModalBody>
-          <ModalFooter>
-
-          </ModalFooter>
-        </Modal>
+        <SelectedBeast 
+        handleOnHide={this.handleOnHide}
+        showModal={this.state.showModal}
+        selectedBeast={this.state.selectedBeast}
+        selectedLikes={this.state.selectedLikes}
+        />
       </>
     );
   }

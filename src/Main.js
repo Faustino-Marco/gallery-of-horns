@@ -5,19 +5,13 @@ import './Main.css';
 import { Container, Row } from 'react-bootstrap';
 
 class Main extends React.Component {
-  constructor(props) {
-    super(props);
-  };
 
   render() {
     let beasts = this.props.data.map((beast, idx) => (
       <HornedBeast
-        title={beast.title}
-        description={beast.description}
-        imageUrl={beast.image_url}
+        clickedBeast={beast}
         key={idx}
         handleOnShowModal={this.props.handleOnShowModal}
-      // addHearts={this.props.addHearts}
       />)
     );
 
@@ -26,7 +20,6 @@ class Main extends React.Component {
         <BeastForm 
         handleSubmit={this.props.handleSubmit}
         handleChange={this.props.handleChange}
-        // handleHorn={this.props.handleHorn}
         />
         <Container>
           <Row lg={4}>
